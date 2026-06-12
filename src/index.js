@@ -15,9 +15,9 @@ async function main() {
     const token = core.getInput('token')
     const filterOutPattern = core.getInput('filter_out_pattern')
     const filterOutFlags = core.getInput('filter_out_flags')
-    const octokit = new github.GitHub(token)
+    const octokit = github.getOctokit(token)
 
-    const commitsListed = await octokit.pulls.listCommits({
+    const commitsListed = await octokit.rest.pulls.listCommits({
       owner: repo.owner.login,
       repo: repo.name,
       pull_number: pr.number,
