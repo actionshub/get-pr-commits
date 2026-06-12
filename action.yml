@@ -1,4 +1,4 @@
-name: 'get-pr-commits'
+name: 'get-pr-commits-action'
 description: 'A GitHub Action that get commits in current pull-request'
 inputs:
   token:
